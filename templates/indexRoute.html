@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <style>
+            .button {
+                border: none;
+                color: white;
+                padding: 10px 20px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 12px;
+                margin: 2px 1px;
+                cursor: pointer;
+            }
+      
+        .button1 {background-color: #094110;} /* Green */
+      </style>    
+    <meta charset="utf-8">
+    <title>Trasy</title>
+  </head>
+  <body>
+    <h1>Trasy</h1>
+    <h3>Najkrótsza trasa:</h3>
+    <pre>{{route1}}</pre>
+    
+    <form method="get" action={{link1}}>
+        <button type = submit class="button button1">Szczegóły</button>
+    </form>
+    
+
+    <h3>Alternatywna trasa:</h3>
+    <pre>{{route2}}</pre>
+    <form method="get" action={{link2}}>
+        <button type = submit class="button button1">Szczegóły</button>
+    </form>
+  </body>
+</html>

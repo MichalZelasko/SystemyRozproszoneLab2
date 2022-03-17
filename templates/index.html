@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <style>
+            .button {
+                border: none;
+                color: white;
+                padding: 10px 20px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 12px;
+                margin: 2px 1px;
+                cursor: pointer;
+            }
+      
+        .button1 {background-color: #094110;} /* Green */
+      </style>    
+    <meta charset="utf-8">
+    <title>Ustaw trasę</title>
+  </head>
+  <body>
+    <h1>Trasa</h1>
+    <form action="{{ url_for('forms') }}" method="post">
+        <label for="start">Wprowadź punkt startowy</label>
+        <input type="text" name="start" value="Kraków">
+        <h3></h3>
+        <label for="destination">Wprowadź punkt docelowy</label>
+        <input type="text" name="destination" value="Warszawa">
+        <h3></h3>
+        <label for="select">Wybierz środek transportu</label>
+        <select name="select">
+            <option>Samochodem</option>
+            <option>Pieszo</option>
+            <option>Rowerem</option>
+        </select>
+        <h3></h3>
+        <label for="selecttype">Wybierz jaką trasę chcesz</label>
+        <select name="selecttype">
+            <option>Najszybsza</option>
+            <option>Najkrótsza</option>
+        </select>
+        <h3></h3>
+        <button type = submit class="button button1">Sprawdź trasy</button>
+        <button type = reset class="button button1">Wyszyść</button>
+    </form>
+  </body>
+</html>
