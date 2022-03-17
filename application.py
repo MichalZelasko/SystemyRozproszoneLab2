@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request
 from routeLogic import RouteGraphHooper, RouteOpenStreetMap, findBest
+import os
 
 app = Flask(__name__)
 
@@ -68,4 +69,5 @@ def forms():
     return distance(dictionary2[type], dictionary[mean], start, destination)
 
 if __name__ == '__main__' :
-    app.run(debug=True, port=5000)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(debug=True, port=port)
