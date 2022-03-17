@@ -71,14 +71,16 @@ class RouteGraphHooper() :
 
     def getHints(self, number = 0) :
         text = ""
+        distance = str(0) + " metr"
         for instruction in self.routeDetails[number]['instructions'] :
             t = instruction['text']
-            distance = getLength(instruction['distance'])
+            dist = getLength(instruction['distance'])
             streetName = instruction['street_name']
             if streetName == "" : streetName = "nieznana"
             if t[0] in ['T', 'K'] : text += (t + " przez " + distance + "ów")
             else : text += ("Za " + distance + "ów" + " " + t )
             text += (" Ulica: " + streetName + "\n")
+            distance = dist
         return text
 
     def getDescription(self, number = 0) :
@@ -131,7 +133,7 @@ class RouteOpenStreetMap() :
 
     def getHints(self, number = 0) :
         text = ""
-        distance = str(0)
+        distance = str(0) + " metr"
         for instruction in self.routeDetails[number]['legs'][0]['steps'] :
             maneuver = instruction['maneuver']
             t = self.getText(maneuver)
